@@ -1,0 +1,89 @@
+body {
+    background-color: rgb(247, 162, 84);
+    color: black;
+}
+
+#imglogin {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    padding: 5px;
+}
+
+#logoimg {
+    border-radius: 200px;
+    border: 5px solid;
+    margin-left: 5px;
+    box-shadow: 2px 4px 6px;
+}
+/*Formulario*/
+.formsesion h1 {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario {
+    margin: 0 40vw;
+}
+
+.formulario input {
+    border: 2px solid;
+    box-shadow: 1px 3px 5px;
+}
+
+.formulario button {
+    margin: 0 4vw;
+    box-shadow: 1px 3px 5px;
+}
+
+.form-control {
+    width: 20vw;
+    display: flex;
+    height: 50px;
+}
+
+.form-floating {
+    margin-right: 50px;
+}
+
+.btn-primary {
+    background-color: white;
+    color: black;
+    font-style: bold;
+    border: 2px solid;
+    box-shadow: 1px 3px 5px;
+}
+#obligatorio, #obligatorio1, #obligatorio2{
+    display: none;
+}
+#alerta1{
+    display: none;
+    background-color: rgb(248, 51, 2) ;
+    color: black;
+    width: 500px;
+}
+
+#alerta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+/*Footer*/
+.jap a {
+    color: black;
+    font-style: bold;
+}
+.jap{
+    color:black;
+}
+.float-end a {
+    color: black;
+    font-style: bold;
+}
+
+.container {
+    margin: 0px;
+}
+
