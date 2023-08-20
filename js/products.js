@@ -8,11 +8,18 @@ function obtenerAutos(){
                 let prod = infoApi.products
     
                for (let i = 0; i < prod.length; i++) {
-                   producto.innerHTML += `<div>
-                   <div>${prod[i].name} - ${prod[i].currency}  ${prod[i].cost}</div>   
-                   <div><img src=${prod[i].image} style= max-width:20vh></div>
-                   ${prod[i].description}  
-                   ${prod[i].soldCount} vendidos</div>`;
+                   producto.innerHTML += `
+                    <div id="container-prod">
+                        <div>
+                            <img id="div__img-prod" src=${prod[i].image} style= max-width:20vh>
+                        </div>
+                        <div><h5> ${prod[i].name} - ${prod[i].currency}  ${prod[i].cost}</h5>
+                            <div id="container__div-sold"> ${prod[i].soldCount} vendidos   </div>
+                            
+                            <p>${prod[i].description}</p>
+                        </div>
+                    </div> `;
+                    
                    
                   
                }

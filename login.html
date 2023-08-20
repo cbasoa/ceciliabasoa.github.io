@@ -14,43 +14,47 @@
 
 <body>
   <main class="formsesion">
-      <div id="imglogin">
-      <img id="logoimg" src="img/login.png">
-    </div>
-    <!--Formulario del login-->
-    <form class="formulario" enctype="" method="" >
-      <br>
-      <h1> Iniciar Sesión</h1>
-      <br>
-      <div class="form-floating"></div>
-      <input type="email" class="form-control" id="floatingInput3" placeholder="Dirección de correo electrónico">
+    <img id="logoimg" src="img/login.png">
+  <!--Formulario del login-->
+  <div id="cuadradito">
+  <form class="formulario" enctype="" method="" >
+   
+    <h1>Iniciar sesión</h1>
+   
+    <input type="email" class="form-control" id="floatingInput3" placeholder="Email">
+    <div id="obligatorio"><p>*Este campo es obligatorio</p></div>
+    <br>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <div id="obligatorio1"><p >*Este campo es obligatorio</p> </div>
+    <br>
+    <div id="robot"><input type="checkbox" class="form-check-input" id="exampleCheck1" >  No soy un robot.</div>
+    <div id="obligatorio2"><p>*Este campo es obligatorio</p></div>
+    <label class="form-check-label" for="exampleCheck1"></label>
+    <br>  
+   
+    <button id="boton" type="button">Log in</button>
 
-      <div id="obligatorio"><p >*Este campo es obligatorio</p> </div>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-
-      <div id="obligatorio1"><p >*Este campo es obligatorio</p> </div>
-      <br>
-      <input type="checkbox" class="form-check-input" id="exampleCheck1"> No soy un robot. 
-      <div id="obligatorio2"><p >*Este campo es obligatorio</p> </div>
-      <label class="form-check-label" for="exampleCheck1"></label>
-      <br>
-      <br>
-      <button id="boton" type="submit" class="btn btn-primary" >Iniciar Sesión</button>
-    </form>
-    <div id="alerta"> <p id="alerta1">
-      Hay campos obligatorios sin completar.
-       Chequeá todos los campos e intentalo de nuevo.</p></div>
-    
+<hr>
+    <p> — or sing in with — </p>
+<div id="botonesRedes">
+    <button class="redes"><img src="img2/gg.png" width="24px" height="24px"> Google</button>
+    <button class="redes"><img src="img2/ig.png" width="26.5px" height="26.5px"> Instagram</button>
+    <button class="redes"><img src="img2/fb.png" width="24px" height="24px"> Facebook</button>
   </div>
-
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <button id="boton" type="submit" class="btn btn-primary"><a href="#">Volver arriba</a></button>
-      </p>
-      <p class="jap">Este sitio forma parte de <button id="boton" type="submit" class="btn btn-primary"><a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jóvenes a Programar</button></a></p>
-    </div>
+  </form>
+</div>
+  <div id="alerta"> <p id="alerta1">
+    Hay campos obligatorios sin completar.
+    <br>
+     Chequeá todos los campos e intentalo de nuevo.</p></div>
+ 
+</div>
+</main>
+<footer class="text-muted">
+  <div class="container">
+    <p> Este sitio forma parte de <a class="link" href="https://jovenesaprogramar.edu.uy/" target="_blank">Jóvenes a Programar</a></p>
+      <p><a id="derecha" class="link" href="#">Volver arriba</a></p>
+  </div>
   </footer>
   <script src="js/login.js"></script>
 </body>
