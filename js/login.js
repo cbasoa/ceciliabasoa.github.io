@@ -4,14 +4,13 @@ document.getElementById("boton").addEventListener("click", validarRegistro);
 function validarRegistro(e) {
   let correo = document.getElementById("floatingInput3").value;
   let contraseña = document.getElementById("exampleInputPassword1").value;
-  let alerta = document.getElementById("alerta");
   const checkbox = document.getElementById("exampleCheck1");
   let expresion = /\w+@+\w+\.+[a-z]/;
 
   if (expresion.test(correo) && contraseña.length >= 6 && checkbox.checked) {
     localStorage.setItem("correo", correo);
     localStorage.setItem("pass", contraseña);
-    window.open("index.html");
+    window.location.href = "index.html";
   } else if (
     !expresion.test(correo) &&
     contraseña.length >= 6 &&
@@ -45,9 +44,12 @@ function validarRegistro(e) {
 
     if (!localStorage.getItem("correo") || !localStorage.getItem("pass")) {
       window.location.href = "login.html";
+      
+    }
+    
     }
   }
-}
+
 
 document.addEventListener("keydown", function (event) {
   if (event.key === "b") {
