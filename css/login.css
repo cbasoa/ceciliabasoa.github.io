@@ -6,7 +6,7 @@ body {
 
 #cuadradito{
     background-color: #ffae6a;
-    height: auto;
+    height: 520px;
     display: flex;
     width: 27%;
     justify-content: center;
