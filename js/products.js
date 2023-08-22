@@ -1,6 +1,9 @@
+//Se obtiene los valores del ID de los productos con LocalStorage
+let catID = localStorage.getItem("catID");
+//Fetch
 function obtenerAutos(){
     const producto = document.getElementById("mostrar-productos");
-    const promise = fetch("https://japceibal.github.io/emercado-api/cats_products/101.json");
+    const promise = fetch("https://japceibal.github.io/emercado-api/cats_products/" + catID + ".json");
         promise
             .then(response => response.json())
             .then(infoApi => {
@@ -27,3 +30,14 @@ function obtenerAutos(){
 };
                     // <li class=product-id>${prod[i].id}</li>
 obtenerAutos();
+ 
+
+//Para el titulo según la elección del elemento 
+
+if(catID === "101"){
+    document.getElementById("categoria").innerHTML = "Autos";
+}else if(catID === "102"){
+    document.getElementById("categoria").innerHTML = "Juguetes";
+}else{
+    document.getElementById("categoria").innerHTML = "Muebles";
+}
