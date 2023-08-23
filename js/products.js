@@ -38,6 +38,6 @@ if(catID === "101"){
     document.getElementById("categoria").innerHTML = "Autos";
 }else if(catID === "102"){
     document.getElementById("categoria").innerHTML = "Juguetes";
-}else{
+}else if(catID === "103"){
     document.getElementById("categoria").innerHTML = "Muebles";
 }
