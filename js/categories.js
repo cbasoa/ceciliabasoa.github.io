@@ -44,20 +44,22 @@ function showCategoriesList(){
 
     let htmlContentToAppend = "";
     for(let i = 0; i < currentCategoriesArray.length; i++){
+        
         let category = currentCategoriesArray[i];
-
+            console.log(category)
         if (((minCount == undefined) || (minCount != undefined && parseInt(category.productCount) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
 
             htmlContentToAppend += `
-            <div onclick="setCatID(${category.id})" class="list-group-item list-group-item-action cursor-active">
+            <div onclick="setCatID(${category.id})" class="categoriaCartas list-group-item list-group-item-action cursor-active ">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-12">
                         <img src="${category.imgSrc}" alt="${category.description}" class="img-thumbnail">
                     </div>
-                    <div class="col">
+                    <div class="col categoriaTextoCarta">
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1">${category.name}</h4>
+                           
                             <small class="text-muted">${category.productCount} artículos</small>
                         </div>
                         <p class="mb-1">${category.description}</p>
@@ -72,6 +74,7 @@ function showCategoriesList(){
 }
 
 function sortAndShowCategories(sortCriteria, categoriesArray){
+    
     currentSortCriteria = sortCriteria;
 
     if(categoriesArray != undefined){
@@ -141,3 +144,4 @@ document.addEventListener("DOMContentLoaded", function(e){
         showCategoriesList();
     });
 });
+
