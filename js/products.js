@@ -7,7 +7,8 @@ function showProducts(){
             .then(infoApi => {
                 console.log(infoApi);
                 let prod = infoApi.products
-    
+
+                product.innerHTML = "";
                for (let i = 0; i < prod.length; i++) {
                    product.innerHTML += `
                     <div id="container-prod">
