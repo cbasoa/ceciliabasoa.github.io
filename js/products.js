@@ -22,6 +22,7 @@ function showProducts(){
                         </div>
                     </div> `;
                 }
+                searchFilter(prod)
                 sortElementsByPrice(prod)
                 filteredArray(prod)//agregar la función que quiero se ejecute con los datos   
             });  // tuve que pasarle prod como argumento porque sino aparecía no definido
@@ -116,6 +117,28 @@ function showFilter(array){
           </div> `;
       };
 };
+// Agregar la búsqueda de productos en tiempo real
+function searchFilter(prod){
+    let inputSearch = document.getElementById("input-search");
+    inputSearch.addEventListener("input", function(){
+        let searched = inputSearch.value.toLowerCase();
+        console.log(searched);
+        product.innerHTML = "";
+        prod.forEach(element => {
+        if ((element.name.toLowerCase().includes(searched)) || (element.description.toLowerCase().includes(searched))) {
+                product.innerHTML += `
+                    <div id="container-prod">
+                        <div>
+                            <img id="div__img-prod" src=${element.image} style= max-width:20vh>
+                        </div>
+                        <div><h5> ${element.name} - ${element.currency}  ${element.cost}</h5>
+                            <div id="container__div-sold"> ${element.soldCount} vendidos   </div>
+                            <p>${element.description}</p>
+                        </div>
+                    </div> `;
+            }});
+    })
+}
 
 
 showProducts();
