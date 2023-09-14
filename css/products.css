@@ -23,7 +23,7 @@
     margin: 2px 10px;
 }
 
-#container-prod{
+.container-prod{
     margin: 0 200px;
     display: inline-flex;
     padding: 20px 50px;

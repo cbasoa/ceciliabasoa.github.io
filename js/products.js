@@ -11,7 +11,7 @@ function showProducts(){
                 product.innerHTML = "";
                for (let i = 0; i < prod.length; i++) {
                    product.innerHTML += `
-                    <div id="container-prod">
+                    <div class="container-prod" id="${prod[i].id}">
                         <div>
                             <img id="div__img-prod" src=${prod[i].image} style= max-width:20vh>
                         </div>
@@ -22,6 +22,7 @@ function showProducts(){
                         </div>
                     </div> `;
                 }
+                selectedProduct(prod)
                 searchFilter(prod)
                 sortElementsByPrice(prod)
                 filteredArray(prod)//agregar la función que quiero se ejecute con los datos   
@@ -139,7 +140,14 @@ function searchFilter(prod){
             }});
     })
 }
-
+// Obtener el ID del producto seleccionado
+function selectedProduct(prod){
+    product.addEventListener("click", (e) =>{
+        let selectProd = e.target.closest(".container-prod").id; // closest busca hacia "atrás" el elemento que coincida
+        localStorage.setItem("Id-Prod", selectProd)
+        window.location = "product-info.html"
+    } )
+}
 
 showProducts();
 
