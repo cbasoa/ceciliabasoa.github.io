@@ -21,11 +21,15 @@ function callJSON() {
 }
 
 callJSON()
+namin.innerHTML = item[0].name;
 
 // Mostrar el producto
 function showProducts(item) {
+   
     product.innerHTML = "";
     for (let i = 0; i < item.length; i++) {
+        
+        
         product.innerHTML += `
          <div class="container-prod" id="${item[i].id}">
              <div>

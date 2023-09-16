@@ -42,7 +42,7 @@ function validarRegistro(e) {
 
 
 document.addEventListener("keydown", function (event) {
-  if (event.key === "b") {
+  if (event.key === "Delete") {
     localStorage.clear();
 
     alert("LocalStorage ha sido borrado.");
