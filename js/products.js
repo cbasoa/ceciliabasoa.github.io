@@ -154,12 +154,3 @@ function selectedProduct(item){
 
 showProducts();
 
-//Llamado a tipo de productos a traves de su categoria
-if (catid ==="101") {
-    document.getElementById("categories").innerHTML = "Autos";
-} else if (catid ==="102") {
-    document.getElementById("categories").innerHTML = "Juguetes";
-} else if (catid ==="103") {
-    document.getElementById("categories").innerHTML = "Muebles";
-}
-
