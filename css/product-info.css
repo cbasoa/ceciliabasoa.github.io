@@ -1,8 +1,18 @@
+body {
+    background-color: orangered;
+    background: linear-gradient(45deg, red, orangered, rgb(235, 109, 6), rgba(215, 78, 54, 0.9));
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
 /*la informacion de los productos*/
 #infoProd {
     margin: 10px;
-    border: 1px solid orangered;
-    box-shadow: 2px 2px 8px 4px orangered;
+    border: 1px solid black;
+    box-shadow: 2px 2px 8px 4px black;
+    border-radius: 20px;
 }
 
 #imgInfo {
@@ -34,9 +44,11 @@
     float: left;
     margin: 10px;
     margin: 10px;
-    border: 1px solid orangered;
-    box-shadow: 2px 2px 8px 4px orangered;
+    border: 1px solid black;
+    box-shadow: 2px 2px 8px 4px black;
     width: 50%;
+    background-color: white;
+    border-radius: 15px;
 }
 
 .comms {
@@ -51,7 +63,7 @@
     margin: auto;
     margin: auto;
     width: 50%;
-    
+
 
 }
 
@@ -70,9 +82,11 @@
     width: 45%;
     height: 260px;
     padding: 5px;
-    border: 1px solid orangered;
-    box-shadow: 2px 2px 8px 4px orangered;
+    border: 1px solid black;
+    box-shadow: 2px 2px 8px 4px black;
     font-family: 'Verdana', serif;
+    background-color: white;
+    border-radius: 15px;
 }
 
 h3 {
@@ -82,15 +96,38 @@ h3 {
 .btnInfo {
     margin-top: 15px;
     text-align: center;
-    
-    
+
+
 }
-button{
-    box-shadow: 2px 2px 8px 4px orangered;
+
+button {
+    box-shadow: 2px 2px 8px 4px black;
 }
-.container{
+
+.container {
     float: left;
     margin: 10px;
     margin: 10px;
     width: 100%;
 }
+
+#options {
+    font-size: 15px;
+}
+
+.form-control {
+    width: 20vw;
+}
+
+.btn {
+    background-color: orangered;
+    border-color: orangered;
+}
+#floatingTextarea{
+    width: 100%;
+}
+
+/*footer*/
+.float-end{
+    color:black;
+  }

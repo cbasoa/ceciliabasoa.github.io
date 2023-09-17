@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         console.log(dateNow)
         const comentario = document.getElementById('floatingTextarea').value;
-        const puntuacion = document.getElementById('opciones').value;
+        const puntuacion = document.getElementById('options').value;
         const nuevoParrafo = document.createElement('p');
 
         nuevoParrafo.innerHTML = `
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <p class = "date">${dateNow}</p>
         <span class="fa fa-star checked">${puntuacion}
         </span> <br>
-        <p>${comentario} <!– Descripción –></p></div>`;
+        <p>${comentario} </p></div>`;
 
         containerCommProd.appendChild(nuevoParrafo);
 
