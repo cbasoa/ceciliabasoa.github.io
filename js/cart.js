@@ -55,7 +55,7 @@ function getCartInfo() {
                     cartBuyID.splice(0, 1);
                     localStorage.setItem('catBuyID', JSON.stringify(cartBuyID));
                     firstProduct.style.display = "none";
-
+                    elem.unitCost = "0";
                     updatesubtotal(elem.unitCost, parseInt(count.value), elem.currency);
                     mostrarTotales();
                 });
@@ -69,30 +69,46 @@ function getCartInfo() {
 document.getElementById("tipoEnvio").addEventListener("change", () => { mostrarTotales() })
 function mostrarTotales() {
     let stotal;
-    let subt = document.getElementById("cartSubt").innerHTML;
-    let nsubt;
+    // let subt = document.getElementById("cartSubt").innerHTML;
+    let subt = 0;
+    let nsubt = 0;
     tipoEnvio = document.getElementById("tipoEnvio").value;
+    let cost = [];
+
 
     if (tipoEnvio != "") {
         if (isNaN(parseInt(subt)) || isNaN(parseInt(nsubt))) {
+            subt = document.getElementById("cartSubt").innerHTML;
+            subt = Number(subt);
             let elements = document.querySelectorAll('[id^="subtNewProd"]');
-            elements.forEach((element) => {
-                console.log(subt + "sisisisi")
-                nsubt = Number(element.innerHTML);
+            elements.forEach((elem) => {
+                // nsubt = Number(element.innerHTML);
+                // stotal = Number(subt) + Number(nsubt);
+                let eachProd = Number(elem.innerHTML)
+                cost.push(eachProd);
+                nsubt = cost.reduce((a, b) => a + b, 0);
                 stotal = Number(subt) + Number(nsubt);
+                console.log(typeof(nsubt));
 
                
             });
 
         } else {
+            subt = document.getElementById("cartSubt").innerHTML;
+            subt = Number(subt);
             let elements = document.querySelectorAll('[id^="subtNewProd"]');
-            elements.forEach((element) => {
-                nsubt += parseInt(element.innerHTML);
+            elements.forEach((elem) => {
+                // nsubt = nsubt +  parseInt(elem.innerHTML);
+                let eachProd = parseInt(elem.innerHTML)
+                if (isNaN(eachProd)){cost.push(0)}
+                else{cost.push(eachProd);
+                nsubt = cost.reduce((a, b) => a + b, 0);}
+                console.log(typeof(subt), subt, cost);
             });
             stotal = parseInt(subt) + parseInt(nsubt); 
         }
         let costEnvio = 0;
-        letcostTotal = 0;
+        let costTotal = 0;
 
         if (tipoEnvio == "estandar") {
 
@@ -108,11 +124,12 @@ function mostrarTotales() {
 
         if(nsubt === ""){
             cartBuySTotal.innerHTML = "USD " + subt;
-        }
-        cartBuySTotal.innerHTML = "USD " + stotal;
+        } 
         
+        cartBuySTotal.innerHTML = "USD " + Number(stotal);
         cartEnvioTotal.innerHTML = "USD " + costEnvio.toFixed(2);
-        cartTotal.innerHTML = "USD " + costTotal.toFixed();
+        cartTotal.innerHTML = "USD " + costTotal.toFixed(1);
+        console.log(typeof(stotal));
     }
 
 }
@@ -135,9 +152,10 @@ function subtotal(cost, amount, currency) {
         while (cartSubt.firstChild) {
             cartSubt.removeChild(cartSubt.firstChild);
         }
-        cartSubt.appendChild(document.createTextNode(subt));
+        cartSubt.appendChild(document.createTextNode(parseInt(subt)));
+        console.log(typeof(subt), subt);
 
-        totalComprado += subt;
+        totalComprado += parseInt(subt);
     }
     mostrarTotales();
 }
@@ -238,7 +256,7 @@ async function callJSON() {
                 cartBuyID.splice(i, 1);
                 localStorage.setItem('catBuyID', JSON.stringify(cartBuyID));
                 showCart.removeChild(row)
-                updatesubtotal(data.cost, parseInt(count.value), data.currency);
+                // updatesubtotal(data.cost, parseInt(count.value), data.currency);
                 mostrarTotales()
             });
 
@@ -268,22 +286,23 @@ async function callJSON() {
 
 function updatesubtotal(cost, amount, currency) {
     if (currency !== "USD") {
-        let upSubt = ((cost / 40) * (amount - 1));
+        let upSubt = ((cost / 40) * (amount=1));
+        console.log(amount, upSubt);
         while (cartSubt.firstChild) {
             cartSubt.removeChild(cartSubt.firstChild);
         }
         cartSubt.appendChild(document.createTextNode(upSubt));
         totalComprado += upSubt;
+        console.log(amount, upSubt);
 
     } else {
-        let upSubt = (cost * (amount - 1));
-        console.log(amount + "2cantidad")
-        console.log(upSubt + "2subt")
+        let upSubt = (cost * (amount=1));
+        console.log(amount, upSubt);
         while (cartSubt.firstChild) {
             cartSubt.removeChild(cartSubt.firstChild);
         }
         cartSubt.appendChild(document.createTextNode(upSubt));
-
+        console.log(amount, upSubt);
         totalComprado += upSubt;
     }
 
@@ -399,4 +418,5 @@ function validateCheckbox() {
     btnMPago.style.color = `red`;
     btnMPago.setCustomValidity("Debe ingresar el Metodo de Pago");
 }
+
 
