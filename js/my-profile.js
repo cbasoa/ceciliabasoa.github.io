@@ -10,11 +10,13 @@
           if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
+            
           }
           form.classList.add('was-validated')
                 if(form.checkValidity()){
                     alert("Perfil actualizado!!");
                 }
+                setLocalStorage(event)
             }, false)
       })
   })()
@@ -55,7 +57,7 @@ const firstLastName = document.getElementById("firstLastName");
 const secondLastName= document.getElementById("secondLastName");
 const phone = document.getElementById("phone"); 
  
-document.getElementById("savechanges").addEventListener("click", (event) =>{
+function setLocalStorage(event){
   event.preventDefault();
   let name = firstName.value;
   let nametwo = secondName.value;
@@ -63,15 +65,19 @@ document.getElementById("savechanges").addEventListener("click", (event) =>{
    let lastnametwo = secondLastName.value;
   let tell = phone.value;
   console.log(name)
-  
-  localStorage.setItem("firstName", name); 
+  if((name != "" && 
+   lastname != "" &&   tell != "" )|| (lastnametwo != "" || nametwo != "")  ){
+      localStorage.setItem("firstName", name); 
   localStorage.setItem("secondName", nametwo); 
   localStorage.setItem("firstLastName", lastname); 
-  localStorage.setItem("secondLastName", lastnametwo); 
   localStorage.setItem("phone", tell); 
+  localStorage.setItem("secondLastName", lastnametwo);
+  }
 
   
-});
+
+  
+}
 
 function getValuesFromLocalStorage(){
 
@@ -107,3 +113,4 @@ function getValuesFromLocalStorage(){
 
 }
 getValuesFromLocalStorage();
+

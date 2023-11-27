@@ -8,7 +8,9 @@
 .jumbotron .display-4 {
   font-weight: bold;
 }
-
+.nav-link{
+  color:black;
+}
 nav a {
   text-decoration: none;
 }
@@ -195,6 +197,15 @@ a.custom-card:hover {
   text-align: center;
 }
 
+#autos, #juguetes, #muebles, #botonMas{
+  color: rgb(31, 31, 31);
+  background-color: orangered;
+  background: linear-gradient(45deg, red, orangered, rgb(235, 109, 6), rgba(215, 78, 54, 0.9), rgb(252, 188, 49));
+}
+
+.links{
+  color: black;
+}
 .links:hover{
   text-decoration: none;
   color: black;
